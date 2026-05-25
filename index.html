@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ingyenes E-book — Túlélőkészlet Kezdő Vállalkozóknak | Csőgér Szilárd</title>
+<meta name="description" content="Ingyenes mérnöki kisokos: a biztonságos cégindítás, az üzleti tervezés és a tőkebevonás titkai. Kerüld el az első évek legdrágább hibáit." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-900:#0a1740;
+    --blue-700:#1f3bb0;
+    --blue-500:#2f55e6;
+    --orange:#f5821f;
+    --orange-600:#e06d0a;
+    --ink:#13224d;
+    --muted:#5a6688;
+    --paper:#ffffff;
+    --paper-2:#f4f7fd;
+    --line:rgba(31,59,176,.10);
+    --line-strong:rgba(31,59,176,.18);
+    --shadow:0 24px 60px -24px rgba(10,23,64,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"IBM Plex Sans",sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Archivo",sans-serif;letter-spacing:-.02em;line-height:1.05}
+  .mono{font-family:"IBM Plex Mono",monospace;letter-spacing:.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .accent{color:var(--orange)}
+  .blue{color:var(--blue-500)}
+
+  /* blueprint grid backdrop */
+  .grid-bg{position:fixed;inset:0;z-index:-2;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;opacity:.7}
+  .mesh{position:fixed;z-index:-1;width:760px;height:760px;border-radius:50%;
+    background:radial-gradient(circle at center,rgba(47,85,230,.16),transparent 62%);
+    filter:blur(8px);top:-280px;right:-200px;pointer-events:none}
+  .mesh.two{background:radial-gradient(circle at center,rgba(245,130,31,.13),transparent 62%);
+    top:auto;bottom:-360px;left:-260px;right:auto}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.82);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mk{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block;
+    box-shadow:0 0 0 2px rgba(31,59,176,.18)}
+  .brand b{font-family:"Archivo";font-weight:800;font-size:15px;letter-spacing:-.01em;display:block;line-height:1.1}
+  .brand span{font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  .nav .cta-sm{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;
+    font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;transition:.18s;white-space:nowrap}
+  .nav .cta-sm:hover{background:var(--orange-600);transform:translateY(-1px)}
+  @media(max-width:620px){.nav .cta-sm{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 56px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+  .tagbar{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:12px;
+    font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--blue-700);
+    background:rgba(47,85,230,.08);border:1px solid var(--line-strong);padding:7px 14px;border-radius:999px}
+  .tagbar .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(245,130,31,.18)}
+  h1.hl{font-size:clamp(34px,5vw,58px);font-weight:900;margin:22px 0 0;color:var(--blue-900)}
+  h1.hl em{font-style:normal;color:var(--orange);position:relative;white-space:nowrap}
+  .sub{font-size:clamp(16px,2.2vw,19px);color:var(--muted);margin:20px 0 0;max-width:540px}
+  .sub b{color:var(--ink);font-weight:600}
+
+  /* opt-in card */
+  .optin{margin-top:30px;background:#fff;border:1px solid var(--line-strong);border-radius:18px;
+    padding:22px;box-shadow:var(--shadow);max-width:520px}
+  .optin .ot{font-family:"Archivo";font-weight:800;font-size:17px;color:var(--blue-900)}
+  .optin .ot small{display:block;font-family:"IBM Plex Sans";font-weight:500;font-size:13px;color:var(--muted);margin-top:3px}
+  .frm{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .frm .row{display:flex;gap:10px}
+  .frm input{flex:1;min-width:0;font-family:"IBM Plex Sans";font-size:15px;padding:13px 15px;
+    border:1.5px solid var(--line-strong);border-radius:11px;color:var(--ink);background:var(--paper-2);transition:.15s}
+  .frm input:focus{outline:none;border-color:var(--blue-500);background:#fff;box-shadow:0 0 0 4px rgba(47,85,230,.12)}
+  .frm button{font-family:"Archivo";font-weight:800;font-size:16px;color:#fff;background:var(--orange);
+    border:none;border-radius:11px;padding:15px 18px;cursor:pointer;transition:.18s;letter-spacing:.01em;
+    box-shadow:0 12px 24px -10px rgba(245,130,31,.7)}
+  .frm button:hover{background:var(--orange-600);transform:translateY(-1px)}
+  .frm button:active{transform:translateY(0)}
+  .reassure{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);margin-top:11px}
+  .reassure svg{flex:none}
+  .ok-state{display:none;text-align:center;padding:6px 4px}
+  .ok-state.show{display:block;animation:pop .4s ease}
+  @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+  .ok-state .check{width:54px;height:54px;border-radius:50%;background:rgba(34,170,90,.12);color:#1e9e54;
+    display:grid;place-items:center;margin:0 auto 12px}
+  .ok-state h3{font-size:20px;color:var(--blue-900)}
+  .ok-state p{font-size:14px;color:var(--muted);margin:6px auto 16px;max-width:340px}
+  .dl-btn{display:inline-flex;align-items:center;gap:9px;background:var(--blue-700);color:#fff;font-weight:700;
+    font-family:"Archivo";padding:13px 22px;border-radius:11px;transition:.18s}
+  .dl-btn:hover{background:var(--blue-500)}
+  .book-cta{display:block;margin-top:13px;font-size:13.5px;color:var(--blue-700);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+  /* book mockup */
+  .book-stage{display:grid;place-items:center;perspective:1600px}
+  .book{position:relative;width:300px;height:404px;transform:rotateY(-19deg) rotateX(4deg);
+    transform-style:preserve-3d;transition:transform .6s ease;animation:floaty 6s ease-in-out infinite}
+  .book:hover{transform:rotateY(-9deg) rotateX(2deg)}
+  @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -12px}}
+  .cover{position:absolute;inset:0;border-radius:5px 12px 12px 5px;overflow:hidden;
+    background:linear-gradient(150deg,#234bd6,#1730a0 64%);color:#fff;
+    box-shadow:var(--shadow);border-left:7px solid rgba(255,255,255,.12)}
+  .cover::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:26px 26px}
+  .cover .pad{position:relative;padding:26px 24px;height:100%;display:flex;flex-direction:column}
+  .cover .tag{font-family:"IBM Plex Mono";font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:#bcd0ff;border:1px solid rgba(255,255,255,.25);padding:5px 9px;border-radius:6px;align-self:flex-start}
+  .cover .ttl{font-family:"Archivo";font-weight:900;font-size:30px;line-height:.98;margin-top:auto}
+  .cover .ttl .o{color:var(--orange)}
+  .cover .dsc{font-size:11.5px;color:#cdd9ff;margin-top:12px;line-height:1.45}
+  .cover .by{margin-top:18px;font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.05em;color:#9fb6ff;
+    border-top:1px solid rgba(255,255,255,.18);padding-top:11px}
+  .ribbon{position:absolute;top:18px;right:-6px;background:var(--orange);color:#fff;font-family:"Archivo";
+    font-weight:800;font-size:11px;letter-spacing:.06em;padding:7px 14px;border-radius:4px 0 0 4px;
+    box-shadow:0 8px 18px -6px rgba(245,130,31,.8);z-index:3}
+  .ribbon::after{content:"";position:absolute;right:0;bottom:-6px;border-top:6px solid var(--orange-600);border-right:6px solid transparent}
+  .spine{position:absolute;left:-1px;top:0;width:18px;height:100%;transform:translateX(-17px) rotateY(90deg);
+    transform-origin:right;background:linear-gradient(#16308f,#0e2370)}
+  .floatchip{position:absolute;font-family:"IBM Plex Mono";font-size:12px;font-weight:600;background:#fff;
+    border:1px solid var(--line-strong);border-radius:10px;padding:9px 13px;box-shadow:var(--shadow);color:var(--blue-900)}
+  .floatchip .accent{font-weight:700}
+  .fc1{top:8%;left:-6%;animation:floaty 5s ease-in-out infinite}
+  .fc2{bottom:10%;right:-4%;animation:floaty 5.6s ease-in-out .4s infinite}
+
+  /* staggered load */
+  .rv{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
+
+  /* ---------- stat band ---------- */
+  .band{background:var(--blue-900);color:#fff;position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;inset:0;opacity:.35;
+    background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:46px 46px}
+  .band .wrap{position:relative;padding:60px 24px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+  .bigstat{font-family:"Archivo";font-weight:900;font-size:clamp(72px,12vw,128px);line-height:.85;color:var(--orange)}
+  .bigstat span{display:block;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#9fb6ff;
+    font-family:"IBM Plex Mono";margin-top:10px;font-weight:500}
+  .band p{font-size:clamp(17px,2.4vw,22px);color:#dfe7ff;max-width:620px}
+  .band p b{color:#fff}
+  .band .punch{margin-top:14px;font-family:"Archivo";font-weight:700;font-size:clamp(18px,2.6vw,24px);color:#fff}
+  @media(max-width:760px){.band .wrap{grid-template-columns:1fr;gap:18px;text-align:center}}
+
+  /* ---------- section ---------- */
+  section.pad{padding:78px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono";font-size:12px;
+    font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
+  h2.sec{font-size:clamp(27px,4vw,42px);font-weight:800;color:var(--blue-900);margin:14px 0 0;max-width:760px}
+  .lead{font-size:17px;color:var(--muted);margin:16px 0 0;max-width:660px}
+
+  /* chapters list */
+  .chs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:42px}
+  .ch{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 24px 24px 74px;transition:.2s}
+  .ch:hover{border-color:var(--line-strong);box-shadow:var(--shadow);transform:translateY(-3px)}
+  .ch .no{position:absolute;left:22px;top:24px;font-family:"Archivo";font-weight:900;font-size:24px;
+    color:var(--blue-500);width:34px;height:34px;display:grid;place-items:center;
+    background:rgba(47,85,230,.09);border-radius:9px}
+  .ch h3{font-size:17.5px;color:var(--blue-900);font-weight:700}
+  .ch p{font-size:14.5px;color:var(--muted);margin-top:7px}
+  @media(max-width:680px){.chs{grid-template-columns:1fr}}
+
+  /* credibility */
+  .cred{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;margin-top:8px}
+  .pf{background:linear-gradient(155deg,#214ad4,#152f9c);border-radius:20px;padding:34px;color:#fff;
+    position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .pf::before{content:"";position:absolute;inset:0;opacity:.4;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:30px 30px}
+  .pf .av{position:relative;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.12);
+    display:grid;place-items:center;font-family:"Archivo";font-weight:900;font-size:30px;color:#fff;
+    border:2px solid rgba(255,255,255,.3)}
+  .pf h3{position:relative;font-size:22px;margin-top:18px}
+  .pf .role{position:relative;font-family:"IBM Plex Mono";font-size:12px;color:#bcd0ff;letter-spacing:.04em;margin-top:5px}
+  .pf .quote{position:relative;font-size:15px;color:#e3ebff;margin-top:18px;line-height:1.6}
+  .pf .quote b{color:#fff}
+  .cred .txt h2{font-size:clamp(24px,3.4vw,34px)}
+  .miniresult{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+  .mr{flex:1;min-width:150px}
+  .mr .n{font-family:"Archivo";font-weight:900;font-size:34px;color:var(--orange);line-height:1}
+  .mr .l{font-size:13.5px;color:var(--muted);margin-top:6px}
+  @media(max-width:780px){.cred{grid-template-columns:1fr;gap:30px}}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px;counter-reset:s}
+  .step{position:relative;background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:28px 22px}
+  .step .sn{font-family:"IBM Plex Mono";font-weight:600;font-size:13px;color:var(--orange);letter-spacing:.1em}
+  .step h3{font-size:17px;color:var(--blue-900);margin-top:8px}
+  .step p{font-size:14px;color:var(--muted);margin-top:7px}
+  .step .ar{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--line-strong);z-index:2}
+  .step:last-child .ar{display:none}
+  @media(max-width:780px){.steps{grid-template-columns:1fr}.step .ar{display:none}}
+
+  /* final cta */
+  .final{background:linear-gradient(135deg,var(--orange),#ff9d42);position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:46px 46px}
+  .final .wrap{position:relative;padding:64px 24px;text-align:center}
+  .final h2{font-size:clamp(28px,4.5vw,46px);color:#fff;font-weight:900;max-width:780px;margin:0 auto}
+  .final p{color:#fff;opacity:.95;font-size:18px;margin:16px auto 28px;max-width:560px}
+  .final .fbtn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue-900);
+    font-family:"Archivo";font-weight:800;font-size:17px;padding:16px 30px;border-radius:12px;transition:.18s;
+    box-shadow:0 18px 40px -16px rgba(10,23,64,.5);cursor:pointer;border:none}
+  .final .fbtn:hover{transform:translateY(-2px)}
+
+  /* footer */
+  footer{background:var(--blue-900);color:#cdd9ff;padding:40px 0}
+  .ft{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .ft .l{display:flex;align-items:center;gap:11px}
+  .ft .l .mk{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block;
+    box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+  .ft .l b{color:#fff;font-family:"Archivo"}
+  .ft .c{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+  .ft .c a{display:flex;align-items:center;gap:7px;transition:.15s}
+  .ft .c a:hover{color:#fff}
+  .legal{margin-top:22px;font-size:12px;color:#6f80b8;border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:30px}.book-stage{order:-1}
+    .book{width:240px;height:324px}.optin{max-width:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img class="mk" src="data:image/jpeg;base64,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" alt="Csőgér Szilárd – Vállalkozásfejlesztés"/>
+      <div><b>Csőgér Szilárd</b><span>Vállalkozásfejlesztés</span></div>
+    </div>
+    <a href="#letoltes" class="cta-sm">Ingyenes letöltés ↓</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="letoltes">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <div class="tagbar rv d1"><span class="dot"></span> Vállalkozásfejlesztés mérnöki precizitással</div>
+      <h1 class="hl rv d2">A kezdő cégek <em>80%-a</em> elbukik 3 év alatt.<br>Te tartozz a túlélő <em>20%-ba</em>.</h1>
+      <p class="sub rv d3">Ingyenes mérnöki kisokos a <b>biztonságos cégindításról, az üzleti tervezésről és a tőkebevonásról</b> — hogy ne a saját megtakarításodon, hanem papíron bukd el a hibákat. Adatok, nem motivációs idézetek.</p>
+
+      <div class="optin rv d4">
+        <div class="ot">Töltsd le ingyen a „Túlélőkészletet"
+          <small>Add meg az e-mail-címed, és azonnal a postaládádban a teljes anyag.</small>
+        </div>
+        <form class="frm" id="leadForm" novalidate>
+          <div class="row">
+            <input type="text" id="nev" name="nev" placeholder="Keresztneved" autocomplete="given-name" />
+          </div>
+          <div class="row">
+            <input type="email" id="email" name="email" placeholder="E-mail-címed" autocomplete="email" required />
+          </div>
+          <button type="submit">Kérem az ingyenes e-bookot →</button>
+        </form>
+        <div class="reassure" id="reassure">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5a6688" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Nincs spam. Bármikor leiratkozhatsz egy kattintással.
+        </div>
+        <!-- success state -->
+        <div class="ok-state" id="okState">
+          <div class="check"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>Köszönöm! Itt az anyagod.</h3>
+          <p>Töltsd le most, vagy nézd meg az e-mailedet. A következő logikus lépés: egy ingyenes, kötelezettségmentes diagnózis-hívás.</p>
+          <a class="dl-btn" id="dlLink" href="#" download>↓ E-book letöltése (PDF)</a>
+          <a class="book-cta" id="bookLink1" href="#" target="_blank" rel="noopener">Vagy foglalj most ingyenes 30 perces diagnózist →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-stage rv d3">
+      <div class="book">
+        <div class="spine"></div>
+        <div class="cover">
+          <div class="ribbon">INGYENES</div>
+          <div class="pad">
+            <div class="tag">E-book · Kisokos</div>
+            <div class="ttl">TÚLÉLŐ&shy;KÉSZLET <span class="o">KEZDŐ</span> VÁLLAL&shy;KOZÓKNAK</div>
+            <div class="dsc">A biztonságos cégindítás, az üzleti tervezés és a tőkebevonás mérnöki titkai — a „vakrepülés" helyett.</div>
+            <div class="by">ÍRTA: CSŐGÉR SZILÁRD · AGRÁRMÉRNÖK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT BAND -->
+<div class="band">
+  <div class="wrap">
+    <div class="bigstat">80%<span>ennyi bukik el 3 év alatt</span></div>
+    <div>
+      <p>A bukás oka az esetek többségében nem a rossz ötlet, hanem a <b>pénzügyi és stratégiai tervezés teljes hiánya</b>. A cégvezetők zöme látástól vakulásig dolgozik — a nyereség mégis csak papíron létezik.</p>
+      <div class="punch">Ők nem cégvezetők. A saját cégük legrosszabbul fizetett alkalmazottai.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section class="pad">
+  <div class="wrap">
+    <div class="eyebrow">Mit kapsz az anyagban</div>
+    <h2 class="sec">6 fejezet kőkemény tudás — a hibák, amik milliókba kerülnek, és hogyan kerüld el őket</h2>
+    <p class="lead">Lényegretörő, mély szakmai kisokos. A célja, hogy megkíméljen az indulás legdrágább csapdáitól, és máris a magyar vállalkozások felső 10%-ához tartozz a tudatosság terén.</p>
+
+    <div class="chs">
+      <div class="ch"><div class="no">1</div><h3>Miért az üzleti terv a túlélésed záloga</h3><p>A „Burn Rate" és a Runway, a piaci validálás, és miért zárulnak el a hitelek és pályázatok terv nélkül.</p></div>
+      <div class="ch"><div class="no">2</div><h3>A nyertes üzleti terv anatómiája</h3><p>Executive Summary, Business Model Canvas, piac- és versenytárs-analízis, SWOT/PEST, és a pénzügyi modell.</p></div>
+      <div class="ch"><div class="no">3</div><h3>Az 5 kőkemény pénzügyi aranyszabály</h3><p>Illeszkedési elv, eszközfedezet, kockázatkiegyenlítés, tőkeszerkezet, arányosság — amit az iskolában nem tanítanak.</p></div>
+      <div class="ch"><div class="no">4</div><h3>A vállalkozói műszerfal</h3><p>A 3 mérőszám, ami nélkül vakrepülés a cégvezetés: CAC vs LTV, fedezeti hozzájárulás, és a készpénz-ciklus (CCC).</p></div>
+      <div class="ch"><div class="no">5</div><h3>Pályázatok és tőkebevonás valósága</h3><p>Miért szórják ki a pályázatok 80%-át, és mi a nyertes pályázatok „Szentháromsága" (KAP, GINOP).</p></div>
+      <div class="ch"><div class="no">6</div><h3>Esettanulmány: a „mókuskerékből" gépezet</h3><p>Hogyan lett egy 100M Ft-os cég megháromszorozott profitja — valós, mérnöki beavatkozással.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="cred">
+      <div class="pf">
+        <div class="av">CS</div>
+        <h3>Csőgér Szilárd</h3>
+        <div class="role">OKLEVELES AGRÁRMÉRNÖK · VÁLLALKOZÁSFEJLESZTŐ</div>
+        <div class="quote">„Nem hiszek a hangzatos ígéretekben és a motivációs idézetekben. A <b>kőkemény adatokban, a matematikában és az átlátható rendszerekben</b> hiszek. Egy mérnök egyetlen kérdésre keresi a választ a cégedben: hol a <b>rendszer</b>?"</div>
+      </div>
+      <div class="txt">
+        <div class="eyebrow">Kitől kapod</div>
+        <h2 class="sec" style="font-size:clamp(24px,3.4vw,34px)">Mérnöki szemlélet a káosz helyett</h2>
+        <p class="lead">A hazai KKV-szektorban elképesztő mennyiségű pénz ég el a felszínes megoldások, a hasraütésszerű árazás és a megérzésekre alapozott döntések miatt. Ez az anyag ez ellen készült.</p>
+        <div class="miniresult">
+          <div class="mr"><div class="n">3×</div><div class="l">megháromszorozott profit egy valós KKV-nál — kevesebb, de jobb ügyféllel</div></div>
+          <div class="mr"><div class="n">15%</div><div class="l">azonnali áremelés a valós önköltség újraszámolása után</div></div>
+          <div class="mr"><div class="n">3 hó</div><div class="l">előretekintő cash-flow — utólagos meglepetések helyett</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="pad" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Mi történik a letöltés után</div>
+    <h2 class="sec">A letöltés még csak az első lépés</h2>
+    <p class="lead">Az e-book megmutatja a hibákat. A megoldás a Te számaidon dől el — ezért a következő lépés mindig személyes és díjmentes.</p>
+    <div class="steps">
+      <div class="step"><div class="sn">01 · MOST</div><h3>Letöltöd és elolvasod</h3><p>Megérted a 80% bukásának valódi okait, és felismered, melyik csapda fenyegeti a Te cégedet.</p>
+        <svg class="ar" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="step"><div class="sn">02 · INGYENES</div><h3>30 perces diagnózis-hívás</h3><p>Ránézünk a számaidra, és megbeszéljük, hol vannak a legnagyobb stratégiai elakadások. Nem adok el semmit, amire nincs szükséged.</p>
+        <svg class="ar" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="step"><div class="sn">03 · KONKRÉT TERV</div><h3>Útvonal a profittermelésig</h3><p>Ha jó az illeszkedés, egy mély diagnózis és akcióterv mentén eldöntöd: velem építed fel, vagy a kapott tervvel magad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final">
+  <div class="wrap">
+    <h2>Ne a saját bőrödön tanulj a hibákból.</h2>
+    <p>Töltsd le az ingyenes Túlélőkészletet, és tedd meg az első mérnöki lépést a stabil, profittermelő cég felé.</p>
+    <button class="fbtn" onclick="document.getElementById('email').focus();window.scrollTo({top:0,behavior:'smooth'})">↑ Kérem az ingyenes e-bookot</button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="l"><img class="mk" src="data:image/jpeg;base64,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" alt="Csőgér Szilárd – Vállalkozásfejlesztés"/><div><b>Csőgér Szilárd</b><br><span style="font-size:12px">Vállalkozásfejlesztés mérnöki precizitással</span></div></div>
+      <div class="c">
+        <a href="mailto:szilardcsoger@gmail.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg> szilardcsoger@gmail.com</a>
+        <a href="tel:+36301805297"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +36 30 180 5297</a>
+        <a href="#" id="fbLink" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8L15.9 15h-2.3v7A10 10 0 0 0 22 12z"/></svg> Csőgér Szilárd – Vállalkozásfejlesztés</a>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr"></span> Csőgér Szilárd Vállalkozásfejlesztés. Minden jog fenntartva. · Az anyag tájékoztató jellegű, nem minősül egyedi pénzügyi vagy jogi tanácsadásnak.</div>
+  </div>
+</footer>
+
+<script>
+/* =================================================================
+   BEÁLLÍTÁSOK — CSAK EZT A HÁROM SORT KELL KICSERÉLNED
+   ================================================================= */
+const EBOOK_URL    = "Tulelokeszlet_Kezdo_Vallalkozoknak.pdf"; // az e-book PDF a tárhelyeden (tedd a html mellé)
+const BOOKING_URL  = "https://calendar.app.google/UeEykc39dqibJDYy9";   // időpontfoglaló (Google naptár)
+const FB_URL       = "https://www.facebook.com/profile.php?id=61575369118261";   // a Facebook-oldalad
+const FORM_ENDPOINT= "";    // OPCIONÁLIS e-mail-gyűjtéshez: pl. Formspree "https://formspree.io/f/xxxxxx"
+                            // Ha üresen hagyod, az oldal akkor is működik: csak letöltést + foglalást ad, e-mail-mentés nélkül.
+/* ================================================================= */
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('dlLink').href = EBOOK_URL;
+document.getElementById('bookLink1').href = BOOKING_URL;
+document.getElementById('fbLink').href = FB_URL;
+
+const form = document.getElementById('leadForm');
+const ok   = document.getElementById('okState');
+const reassure = document.getElementById('reassure');
+
+function isEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const nev   = document.getElementById('nev').value.trim();
+  const emailInput = document.getElementById('email');
+
+  if(!isEmail(email)){
+    emailInput.style.borderColor = '#e0483c';
+    emailInput.focus();
+    return;
+  }
+
+  const btn = form.querySelector('button');
+  btn.textContent = 'Küldés...';
+  btn.disabled = true;
+
+  // Ha be van állítva e-mail-gyűjtő végpont, elküldjük oda az adatot.
+  if(FORM_ENDPOINT){
+    try{
+      await fetch(FORM_ENDPOINT,{
+        method:'POST',
+        headers:{'Accept':'application/json','Content-Type':'application/json'},
+        body:JSON.stringify({nev:nev,email:email,forras:'e-book landing'})
+      });
+    }catch(err){/* a felhasználói élményt nem törjük meg, ha a hálózat hibázik */}
+  }
+
+  // Siker-állapot: letöltés + foglalási CTA megjelenítése
+  form.style.display = 'none';
+  reassure.style.display = 'none';
+  ok.classList.add('show');
+
+  // Automatikus letöltés indítása, ha valódi fájl van beállítva
+  if(EBOOK_URL && EBOOK_URL !== '#'){
+    const a = document.createElement('a');
+    a.href = EBOOK_URL; a.download = '';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+});
+</script>
+</body>
+</html>
