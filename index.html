@@ -397,7 +397,7 @@
 const EBOOK_URL    = "Tulelokeszlet_Kezdo_Vallalkozoknak.pdf"; // az e-book PDF a tárhelyeden (tedd a html mellé)
 const BOOKING_URL  = "https://calendar.app.google/UeEykc39dqibJDYy9";   // időpontfoglaló (Google naptár)
 const FB_URL       = "https://www.facebook.com/profile.php?id=61575369118261";   // a Facebook-oldalad
-const FORM_ENDPOINT= "";    // OPCIONÁLIS e-mail-gyűjtéshez: pl. Formspree "https://formspree.io/f/xxxxxx"
+const FORM_ENDPOINT= "https://formspree.io/f/mqejyddr";    // Formspree — e-mail-gyűjtés
                             // Ha üresen hagyod, az oldal akkor is működik: csak letöltést + foglalást ad, e-mail-mentés nélkül.
 /* ================================================================= */
 
@@ -434,7 +434,7 @@ form.addEventListener('submit', async function(e){
       await fetch(FORM_ENDPOINT,{
         method:'POST',
         headers:{'Accept':'application/json','Content-Type':'application/json'},
-        body:JSON.stringify({nev:nev,email:email,forras:'e-book landing'})
+        body:JSON.stringify({nev:nev,email:email,forras:'e-book landing',_subject:'Új e-book feliratkozó — landing'})
       });
     }catch(err){/* a felhasználói élményt nem törjük meg, ha a hálózat hibázik */}
   }
